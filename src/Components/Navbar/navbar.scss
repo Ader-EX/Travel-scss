@@ -1,0 +1,158 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --GradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
+  --WhiteColor: hsl(255, 255, 255);
+  --BlackColor: hsl(0, 0, 0);
+  --TextColor: hsl(240, 4%, 36%);
+  --WhiteColorDim: hsl(0, 0%, 93%);
+  --GreyText: rgb(190, 190, 190);
+  --InputColor: rgb(239, 239, 239);
+  --BodyColor: rgb(240, 240, 246);
+  --CardBG: rgb(225, 225, 235);
+}
+
+.grid {
+  display: grid;
+}
+
+.navLists {
+  text-decoration: none;
+  color: hsl(199, 100%, 33%);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-left: 650px;
+  font-weight: bold;
+
+  .btn {
+    margin-top: 30px;
+  }
+}
+
+.navLists li {
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: hsl(199, 100%, 33%);
+  &:hover {
+    color: hsl(199, 100%, 50%);
+  }
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--WhiteColorDim);
+  width: 100%;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.6);
+}
+
+.closeNavBar {
+  opacity: 0%;
+}
+
+.logo {
+  color: var(--BlackColor);
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: rgb(68, 129, 195);
+}
+
+.icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+  transform: translateY(5px);
+}
+
+.toggleNavbar {
+  opacity: 0%;
+  .icon {
+    font-size: 25px;
+    color: var(--PrimaryColor);
+  }
+  &:hover {
+    color: var(--SecondaryColor);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .toggleNavbar {
+    opacity: 100%;
+  }
+  .navBar {
+    position: absolute;
+    background: var(--WhiteColorDim);
+    height: max-content;
+    width: 80%;
+    border-radius: 1rem;
+    padding: 1rem;
+    top: 6rem;
+    opacity: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    transition: 0.3s ease-in-out;
+  }
+  .activeNavbar {
+    top: 6rem;
+    opacity: 100%;
+  }
+
+  .navLists {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  .navItem {
+    padding: 0.5rem 0;
+  }
+
+  .navLink {
+    color: var(--TextColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    &:hover {
+      color: var(--PrimaryColor);
+    }
+  }
+  .btn {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    a {
+      font-weight: 600;
+      color: var(white);
+    }
+  }
+
+  .closeNavBar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--PrimaryColor);
+    opacity: 100%;
+    &:hover {
+      color: var(--SecondaryColor);
+    }
+  }
+}
